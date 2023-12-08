@@ -5,7 +5,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/movies:
+ * /api/v1/movies:
  *   get:
  *     summary: Retrieve a list of movies
  *     description: Retrieve a list of movies with their available time slots.

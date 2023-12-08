@@ -5,7 +5,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/reservations/check-availability/{movieId}/{timeSlotId}:
+ * /api/v1/reservations/check-availability/{movieId}/{timeSlotId}:
  *   get:
  *     summary: Check the availability of a specific time slot for a movie
  *     description: Retrieve the remaining capacity for a given time slot of a movie.
@@ -42,7 +42,7 @@ router.get("/check-availability/:movieId/:timeSlotId", checkAvailability);
 
 /**
  * @swagger
- * /api/reservations/reserve:
+ * /api/v1/reservations/reserve:
  *   post:
  *     summary: Reserve a time slot for a movie
  *     description: Reserve a specific number of seats for a movie at a given time slot.
