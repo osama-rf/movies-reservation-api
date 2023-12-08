@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import {connectToDB} from "./api/config/dbConfig";
 import movieRoutes from './api/routes/movieRoutes';
 import reservationRoutes from './api/routes/reservationRoutes';
-import {SuccessMessages} from "./api/constants";
+import {SuccessMessages} from "./constants";
 import errorHandler from "./api/middlewares/errorHandler";
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';

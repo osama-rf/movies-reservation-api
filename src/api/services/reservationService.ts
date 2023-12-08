@@ -3,7 +3,7 @@ import TimeSlotModel from "../models/timeslot";
 import {mapToMovieListDto, MoviesListDto} from "../dto/moviesListDto";
 import {AvailabilityCheckDto} from "../dto/availabilityCheckDto";
 import {ReservationDto} from "../dto/reservationDto";
-import {ErrorMessages} from "../constants";
+import {ErrorMessages} from "../../constants";
 
 export const listAvailableMovies = async (): Promise<MoviesListDto[]> => {
     try {

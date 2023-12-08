@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from "express";
-import {ErrorMessages} from "../constants";
+import {ErrorMessages} from "../../constants";
 
 const errorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
     console.error(err.stack);

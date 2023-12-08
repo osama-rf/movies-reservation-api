@@ -1,6 +1,6 @@
 import MovieModel from '../models/movie';
 import TimeslotModel from '../models/timeslot';
-import {ErrorMessages, SuccessMessages} from "../constants";
+import {ErrorMessages, SuccessMessages} from "../../constants";
 
 interface MovieSeed {
     title: string;

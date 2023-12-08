@@ -2,7 +2,7 @@ import {Request, Response} from 'express';
 import {checkTimeSlotAvailability, reservedTimeSlot} from '../services/reservationService';
 import {AvailabilityCheckDto} from '../dto/availabilityCheckDto';
 import {ReservationDto} from '../dto/reservationDto';
-import {ErrorMessages} from "../constants";
+import {ErrorMessages} from "../../constants";
 import mongoose from "mongoose";
 
 export const checkAvailability = async (req: Request, res: Response): Promise<Response<AvailabilityCheckDto>> => {
