@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import {seedMoviesToDb} from "../services/migrationService";
-import {SuccessMessages} from "./constants";
+import {SuccessMessages} from "../utils/constants";
 
 export const connectToDB = async (mongoUri: string) => {
     try {

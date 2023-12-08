@@ -1,7 +1,7 @@
 import express, {Request, Response} from "express";
 import dotenv from 'dotenv';
 import bodyParser from "body-parser";
-import {connectToDB} from "./api/utils/dbConfig";
+import {connectToDB} from "./api/config/dbConfig";
 import movieRoutes from './api/routes/movieRoutes';
 import reservationRoutes from './api/routes/reservationRoutes';
 import {SuccessMessages} from "./api/utils/constants";

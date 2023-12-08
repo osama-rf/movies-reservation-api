@@ -1,14 +1,7 @@
-Creating a comprehensive README file is an essential part of any project, as it provides crucial information about the structure, usage, and decision-making aspects of your application. Below is a template for your README that you can further customize as needed:
-
----
-
 # Movie Reservation System API
 
 ## Introduction
-This project is a RESTful API for managing a movie reservation system. It allows users to view available movies, check the availability of specific time slots for movies, and reserve time slots. The API is built using Node.js with Express.js and MongoDB.
-
-## Why Swagger for Documentation?
-Swagger (OpenAPI) is used for documenting the API because it offers an interactive, user-friendly interface for exploring and testing the API endpoints. It helps both developers and non-developers understand the API's functionalities, making the development and integration process more efficient and transparent.
+This is a RESTful API for managing a movie reservation. It allows users to view available movies, check the availability of specific time slots for movies, and reserve time slots. The API is built using Node.js with Express.js and MongoDB.
 
 ## Project Structure
 ```
@@ -25,7 +18,7 @@ movie-reservation-system/
 │   │   └── services/          # Business logic
 │   │
 │   ├── config/                # Configuration files
-│   ├── utils/                 # Utility functions
+│   ├── utils/                 # Utility classes
 │   └── app.ts                 # Express app initialization
 │
 ├── .env                       # Environment variables
@@ -45,24 +38,25 @@ movie-reservation-system/
    - Add the MongoDB URI and other configuration settings:
      ```
      MONGO_URI=your_mongodb_uri
-     PORT=3000
+     PORT=3000 or any other port you want to use
      ```
 
 3. **Running the Application**
    - Run the server: `npm start`
    - The application will be available at `http://localhost:3000`.
 
-4. **API Documentation**
+4. **Seed the Database**
+   - By default, when running the application for the first time, the movies data will be automatically seed the database, So feel free to test the endpoints.
+
+5. **Endpoints**
+   - The API endpoints are available at `http://localhost:3000/api/v1`.
+   - The app contains the following endpoints:
+     - `GET /movies` - Get all movies from the database.
+     - `GET /reservations/check-availability/:movieId/:timeSlotId` - Check the availability of a movie based on the capacity.
+     - `POST /reservations/reserve` The request body should include `movieId`, `timeSlotId`, and `numberOfPeople` parameters. This endpoint is for making reservations and managing bookings.
+
+6. **API Documentation**
    - Access the Swagger documentation at `http://localhost:3000/api-docs` for detailed information and testing of API endpoints.
 
-## Contributing
-Feel free to contribute to this project by submitting pull requests or opening issues for bugs and feature requests.
-
----
-
-### Customization:
-- Replace `[repository URL]` with the actual URL of your Git repository.
-- Add or remove sections based on the specifics of your project.
-- Include any additional instructions or details that might be helpful for users or contributors.
-
-This README provides a basic overview of your project and should be updated as your project evolves to keep it relevant and useful.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
