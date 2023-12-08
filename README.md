@@ -1,7 +1,7 @@
 # Movie Reservation System API
 
 ## Introduction
-This is a RESTful API for managing a movie reservation. It allows users to view available movies, check the availability of specific time slots for movies, and reserve time slots. The API is built using Node.js with Express.js and MongoDB.
+This is a RESTful API for managing a movies reservation. It allows users to view available movies, check the availability of specific time slots for movies, and reserve time slots. The API is built using Node.js with Express.js and MongoDB.
 
 ## Project Structure
 ```
