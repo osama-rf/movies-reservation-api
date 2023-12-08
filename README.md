@@ -16,6 +16,7 @@ movie-reservation-system/
 │   │   ├── models/            # Mongoose models
 │   │   ├── routes/            # API routes
 │   │   └── services/          # Business logic
+│   │   └── dto/               # Data transfer objects
 │   │
 │   ├── config/                # Configuration files
 │   └── app.ts                 # Express app initialization
