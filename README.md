@@ -18,7 +18,6 @@ movie-reservation-system/
 │   │   └── services/          # Business logic
 │   │
 │   ├── config/                # Configuration files
-│   ├── utils/                 # Utility classes
 │   └── app.ts                 # Express app initialization
 │
 ├── .env                       # Environment variables
