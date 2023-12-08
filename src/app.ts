@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import {connectToDB} from "./api/config/dbConfig";
 import movieRoutes from './api/routes/movieRoutes';
 import reservationRoutes from './api/routes/reservationRoutes';
-import {SuccessMessages} from "./api/utils/constants";
+import {SuccessMessages} from "./api/constants";
 import errorHandler from "./api/middlewares/errorHandler";
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
@@ -36,6 +36,6 @@ app.use('/api/v1/movies', movieRoutes);
 app.use('/api/v1/reservations', reservationRoutes);
 
 const port = process.env.PORT || 'your-port';
-app.listen(port, () => console.log(SuccessMessages.ServerRunning));
+app.listen(port, () => console.log(SuccessMessages.SERVER_RUNNING));
 
 export default app;

@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 import {seedMoviesToDb} from "../services/migrationService";
-import {SuccessMessages} from "../utils/constants";
+import {SuccessMessages} from "../constants";
 
 export const connectToDB = async (mongoUri: string) => {
     try {
         await mongoose.connect(mongoUri);
-        console.log(SuccessMessages.ConnectionSuccess);
+        console.log(SuccessMessages.CONNECTION_SUCCESS);
 
         // check if movies and timeslots collections are empty and seed them if they are.
         // to avoid seeding every time the server starts

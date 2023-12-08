@@ -11,7 +11,41 @@ const swaggerDefinition = {
             description: 'Development server',
         },
     ],
-}
+    components: {
+        schemas: {
+            Movie: {
+                type: 'object',
+                properties: {
+                    _id: {
+                        type: 'string',
+                        format: 'ObjectId',
+                        description: 'The unique identifier of the movie'
+                    },
+                    title: {
+                        type: 'string',
+                        description: 'The title of the movie'
+                    },
+                    timeslots: {
+                        type: 'array',
+                        items: {
+                            $ref: '#/components/schemas/TimeSlot'
+                        }
+                    }
+                }
+            },
+            TimeSlot: {
+                type: 'object',
+                properties: {
+                    _id: {
+                        type: 'string',
+                        format: 'ObjectId',
+                        description: 'The unique identifier of the time slot'
+                    },
+                }
+            }
+        },
+    }
+};
 
 const options = {
     swaggerDefinition,

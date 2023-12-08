@@ -3,14 +3,14 @@ import TimeSlotModel from "../models/timeslot";
 import {mapToMovieListDto, MoviesListDto} from "../dto/moviesListDto";
 import {AvailabilityCheckDto} from "../dto/availabilityCheckDto";
 import {ReservationDto} from "../dto/reservationDto";
-import {ErrorMessages} from "../utils/constants";
+import {ErrorMessages} from "../constants";
 
 export const listAvailableMovies = async (): Promise<MoviesListDto[]> => {
     try {
         const movies = await MovieModel.find().populate('timeslots');
         return mapToMovieListDto(movies);
     } catch (error) {
-        console.log(ErrorMessages.ErrorListingMovies);
+        console.log(ErrorMessages.ERROR_LISTING_MOVIES);
         throw error;
     }
 };
@@ -25,7 +25,7 @@ export const checkTimeSlotAvailability = async (movieId: string, timeSlotId: str
         });
 
         if (!movie || !movie.timeslots || movie.timeslots.length === 0) {
-            throw new Error(ErrorMessages.MovieOrTimeSlotNotFound);
+            throw new Error(ErrorMessages.MOVIE_OR_TIME_SLOT_NOT_FOUND);
         }
 
         const timeslot = movie.timeslots[0];
@@ -34,8 +34,8 @@ export const checkTimeSlotAvailability = async (movieId: string, timeSlotId: str
         }
 
     } catch (error) {
-        console.log(ErrorMessages.ErrorCheckingTimeSlotAvailability);
-        throw new Error(ErrorMessages.ErrorCheckingTimeSlotAvailability)
+        console.log(ErrorMessages.ERROR_CHECKING_TIME_SLOT_AVAILABILITY);
+        throw new Error(ErrorMessages.ERROR_CHECKING_TIME_SLOT_AVAILABILITY)
     }
 }
 
@@ -44,11 +44,11 @@ export const reservedTimeSlot = async (movieId: string, timeSlotId: string, numb
         const timeslot = await TimeSlotModel.findById(timeSlotId);
 
         if (!timeslot || timeslot.capacity === undefined || timeslot.bookedCount === undefined) {
-            throw new Error(ErrorMessages.ErrorTimeSlot);
+            throw new Error(ErrorMessages.ERROR_TIME_SLOT);
         }
 
         if (timeslot.capacity - timeslot.bookedCount < numberOfPeople) {
-            throw new Error(ErrorMessages.ErrorCapacity);
+            throw new Error(ErrorMessages.ERROR_CAPACITY);
         }
 
         timeslot.bookedCount += numberOfPeople;
@@ -61,6 +61,6 @@ export const reservedTimeSlot = async (movieId: string, timeSlotId: string, numb
         };
     } catch (error) {
         console.error(error);
-        throw new Error(ErrorMessages.ErrorReservingTimeSlot);
+        throw new Error(ErrorMessages.ERROR_RESERVING_TIME_SLOT);
     }
 };

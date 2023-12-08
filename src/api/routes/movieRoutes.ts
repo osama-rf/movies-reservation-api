@@ -17,7 +17,7 @@ const router = Router();
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '../models/Movie'
+ *                 $ref: '#/components/schemas/Movie'
  */
 router.get('/', getAllMovies);
 

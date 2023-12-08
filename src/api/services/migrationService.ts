@@ -1,6 +1,6 @@
 import MovieModel from '../models/movie';
 import TimeslotModel from '../models/timeslot';
-import {ErrorMessages, SuccessMessages} from "../utils/constants";
+import {ErrorMessages, SuccessMessages} from "../constants";
 
 interface MovieSeed {
     title: string;
@@ -28,7 +28,7 @@ const movieData: MovieSeed[] = [
         ]
     },
     {
-        title: 'Napoleon',
+        title: 'Whiplash',
         timeslots: [
             {
                 startTime: new Date('2023-12-17T09:00:00'),
@@ -71,8 +71,8 @@ export const seedMoviesToDb = async () => {
             await movieDoc.save();
         }
 
-        console.log(SuccessMessages.SeedMoviesSuccess);
+        console.log(SuccessMessages.SEED_MOVIES_SUCCESS);
     } catch (error) {
-        console.log(ErrorMessages.SeedMoviesError, error);
+        console.log(ErrorMessages.SEED_MOVIES_ERROR, error);
     }
 };
