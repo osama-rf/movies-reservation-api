@@ -19,6 +19,8 @@ movie-reservation-system/
 │   │
 │   ├── config/                # Configuration files
 │   └── app.ts                 # Express app initialization
+│   └── swagger.ts             # swagger file
+│   └── constants.ts           # constants using in the app
 │
 ├── .env                       # Environment variables
 ├── package.json
