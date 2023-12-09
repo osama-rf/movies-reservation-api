@@ -27,6 +27,9 @@ export const reserveTimeSlot = async (req: Request, res: Response): Promise<Resp
     if (!mongoose.Types.ObjectId.isValid(movieId) || !mongoose.Types.ObjectId.isValid(timeSlotId)) {
         return res.status(400).json({message: ErrorMessages.INVALID_ID});
     }
+    if (typeof numberOfPeople !== 'number' || numberOfPeople < 1) {
+        return res.status(400).json({message: ErrorMessages.ERROR_NUMBER_OF_PEOPLE});
+    }
     try {
         const reservation = await reservedTimeSlot(movieId, timeSlotId, numberOfPeople);
         return res.json(reservation);

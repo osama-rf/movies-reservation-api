@@ -9,6 +9,7 @@ export const ErrorMessages = {
     INVALID_ID: 'Invalid Movie or Time Slot Id',
     INTERNAL_SERVER_ERROR: 'Internal Server Error',
     INVALID_NUMBER_OF_PEOPLE: 'Invalid number of people',
+    ERROR_NUMBER_OF_PEOPLE: 'Number of people must be a positive integer',
 };
 
 export const SuccessMessages = {
